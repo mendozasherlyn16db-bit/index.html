@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dark Horror - Películas de Terror</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        /* MENÚ */
+        header {
+            background: #050505;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #b30000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e60000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e60000;
+        }
+
+        /* PORTADA */
+        .inicio {
+            height: 550px;
+            display: flex;
+            align-items: center;
+            padding: 50px 8%;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.75),
+                    rgba(0,0,0,.85)
+                ),
+                url("https://images.unsplash.com/photo-1505635552518-3448ff116af3");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .contenido-inicio {
+            max-width: 650px;
+        }
+
+        .contenido-inicio h1 {
+            font-size: 60px;
+            color: #ff0000;
+            text-shadow: 0 0 20px #ff0000;
+            margin-bottom: 20px;
+        }
+
+        .contenido-inicio p {
+            font-size: 20px;
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            background: #b30000;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            background: #ff0000;
+            box-shadow: 0 0 20px red;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 70px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 40px;
+            color: #e60000;
+            margin-bottom: 40px;
+        }
+
+        /* PELÍCULAS */
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .pelicula {
+            background: #151515;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: .3s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-10px);
+            border-color: #e60000;
+            box-shadow: 0 0 20px #550000;
+        }
+
+        .pelicula img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .informacion {
+            padding: 20px;
+        }
+
+        .informacion h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .informacion p {
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        .estrellas {
+            color: #ffc400;
+            margin: 10px 0;
+        }
+
+        /* CATEGORÍAS */
+        #categorias {
+            background: #101010;
+        }
+
+        .categorias {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .categoria {
+            background: #1b0000;
+            border: 1px solid #900000;
+            padding: 18px 30px;
+            border-radius: 30px;
+        }
+
+        .categoria:hover {
+            background: #b30000;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #030303;
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            border-top: 1px solid #400000;
+        }
+
+        footer span {
+            color: red;
+        }
+
+        /* CELULARES */
+        @media (max-width: 900px) {
+            .peliculas {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .contenido-inicio h1 {
+                font-size: 40px;
+            }
+
+            .peliculas {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ -->
+    <header>
+
+        <div class="logo">
+            👻 DARK HORROR
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#peliculas">Películas</a>
+            <a href="#categorias">Categorías</a>
+        </nav>
+
+    </header>
+
+
+    <!-- INICIO -->
+    <section class="inicio" id="inicio">
+
+        <div class="contenido-inicio">
+
+            <h1>PELÍCULAS DE TERROR</h1>
+
+            <p>
+                Bienvenido a Dark Horror, el lugar donde encontrarás
+                películas de terror, suspenso, misterio y fenómenos
+                paranormales.
+            </p>
+
+            <a href="#peliculas" class="boton">
+                VER PELÍCULAS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PELÍCULAS -->
+    <section id="peliculas">
+
+        <h2 class="titulo">
+            🎬 Películas Destacadas
+        </h2>
+
+        <div class="peliculas">
+
+
+            <!-- PELÍCULA 1 -->
+            <div class="pelicula">
+
+                <img
+                    src="https://images.unsplash.com/photo-1601513445506-2ab0d4fb4229"
+                    alt="Película de terror">
+
+                <div class="informacion">
+
+                    <h3>El Conjuro</h3>
+
+                    <div class="estrellas">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        Una familia comienza a experimentar
+                        extraños acontecimientos después de
+                        mudarse a una antigua casa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PELÍCULA 2 -->
+            <div class="pelicula">
+
+                <img
+                    src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be"
+                    alt="Película de suspenso">
+
+                <div class="informacion">
+
+                    <h3>La Noche Oscura</h3>
+
+                    <div class="estrellas">
+                        ★★★★☆
+                    </div>
+
+                    <p>
+                        Una noche aparentemente tranquila
+                        se convierte en una experiencia
+                        aterradora.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PELÍCULA 3 -->
+            <div class="pelicula">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23"
+                    alt="Película de misterio">
+
+                <div class="informacion">
+
+                    <h3>El Misterio</h3>
+
+                    <div class="estrellas">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        Un investigador descubre pistas
+                        relacionadas con una serie de
+                        extraños acontecimientos.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PELÍCULA 4 -->
+            <div class="pelicula">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516410529446-2c777cb7366d"
+                    alt="Casa abandonada">
+
+                <div class="informacion">
+
+                    <h3>La Casa Abandonada</h3>
+
+                    <div class="estrellas">
+                        ★★★★☆
+                    </div>
+
+                    <p>
+                        Un grupo de amigos entra en una
+                        casa abandonada y descubre que
+                        quizá no están solos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORÍAS -->
+    <section id="categorias">
+
+        <h2 class="titulo">
+            👻 Categorías
+        </h2>
+
+        <div class="categorias">
+
+            <div class="categoria">
+                👻 Paranormal
+            </div>
+
+            <div class="categoria">
+                🔪 Slasher
+            </div>
+
+            <div class="categoria">
+                🧟 Zombies
+            </div>
+
+            <div class="categoria">
+                🧛 Vampiros
+            </div>
+
+            <div class="categoria">
+                🏚️ Casas Embrujadas
+            </div>
+
+            <div class="categoria">
+                🔎 Suspenso
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <span>Dark Horror</span>
+            | Página de películas de terror
+        </p>
+
+    </footer>
+
+</body>
+</html>
